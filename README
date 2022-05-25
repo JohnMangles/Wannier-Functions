@@ -1,0 +1,11 @@
+Code for John Mangles' Masters thesis Second Degree Localization in Twisted Bilayer Graphene.
+
+Graphene Script generates a periodic grid corresponding to the locations of the nuclei of the atoms in a single layer of graphene.
+
+sRRQR is a Strong Rank Revealing QR factorizing algorithm. Given an input matrix A and rank r, it returns a QR factorization of A limited to the specified rank 
+(e.g. a rank 10 A passed in with r = 3 would return a rank 3 QR facorization corresponding to the leading 3 eigenvectors/eigenvalues of A)
+
+GrapheneWannier calls the afformentioned functions. Using Graphene Script twice it creates a layered grid that corresponds to twisted bilayer graphene,
+Then a periodic matrix corresponding to the energy of the system is created and fed into sRRQR to return the leading vectors of interest.
+A Fourier transformation is then taken so our computations can be performed efficiently, and our results are brought back to real space with an inverse
+Fourier transformation. Lastly, the energy levels of interest are plotted once they have been computed.
